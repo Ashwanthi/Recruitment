@@ -1,0 +1,37 @@
+app:
+  cache:
+    logoutToken:
+      maxSize: 1
+  jwt:
+    expiration: 86400
+    header: Authorization
+    header.prefix: 'Bearer '
+    secret: cannext
+  token:
+    email:
+      verification:
+        duration: 86400
+    password:
+      reset:
+        duration: 1800
+    refresh:
+      duration: 1800
+  velocity:
+    templates:
+      location: /templates/
+cannext:
+  web:
+    paths: /v2/api-docs/**,/api/auth/**,/v1/**,/swagger-ui.html
+server:
+  port: 8090
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    password: Cannext$123
+    url: jdbc:mysql://can-next-dev-db.ccg8hrk7xdlo.ap-south-1.rds.amazonaws.com:3306/qbrainx_recruitment
+    username: admin
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    show-sql: true
